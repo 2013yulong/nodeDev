@@ -1,0 +1,26 @@
+// close.scss
+// ========================================
+
+$close: #{$namespace}close;
+
+$close-color: #555;
+$close-hover-color: #b1b1b1;
+
+.#{$close} {
+  display: inline-block;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 1.8rem;
+  line-height: 30px;
+  color: $close-color;
+
+  &:hover,
+  &:focus {
+    color: $close-hover-color;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .5;
+    outline: none;
+  }
+}

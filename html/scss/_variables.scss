@@ -1,0 +1,209 @@
+// Component:		  Variables
+//
+// Description:		Define all variables
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Global Variables
+// -----------------------------------------------------------------------------
+
+// Set classes namespace, e.g. `am-`
+$namespace: ui- !default;
+
+// This sets 1rem to be 16px
+$rem-base: 10px;
+
+$base-font-size: 100% !default;
+
+$base-line-height: 1.5 !default;
+
+
+// Global
+// ------------------------------------------------
+$global-padding: 1rem !default;
+$global-margin: 1rem !default;
+$global-spacing: rem-calc(15) !default;
+
+
+// color
+// -----------------------------------------------
+
+$black: #000;
+$white: #fff;
+
+$global-primary: #2980b9;
+$global-secondary: #3498db;
+$global-success: #00c486;
+$global-warning: #F2D12A;
+$global-alert: #e74c3c;
+
+$global-background-color: #ffa;
+$global-border:	#F2F2F2;
+
+// Gray
+// -----------------------------------------------
+
+$gray-lighter: lighten($black, 93.5%); // #eee
+$gray-light: #ddd;
+$gray: #bbb;
+$gray-dark: #666;
+$gray-darker: lighten($black, 20%);   // #333
+
+
+// Link color
+// -----------------------------------------------
+
+$link-color: $global-primary;
+$link-hover-color: darken($link-color, 15%);
+
+
+// Base color
+
+$base-background: $white;
+$base-mark-background: $global-background-color;
+$base-mark-color: $gray-dark;
+
+
+// Base
+// ----------------------------------------------
+
+$global-font-size: 1.6rem;
+
+$base-font-weight: normal;
+$base-text-color: $gray-dark;
+$base-margin-vertical: 1.6rem;
+
+$base-heading-font-weight: 600;
+$base-heading-margin-top: 2em;
+
+// hr
+$base-hr-border: $gray-lighter;
+
+// Blockquote
+$base-blockquote-border: $global-border;
+$base-blockquote-small-color: $gray-light;
+
+// Ins
+$base-ins-background: $global-background-color;
+$base-ins-color: $gray-dark;
+
+
+// fonts size
+// ------------------------------------------------------------------------------
+//$font-size-xs: rem-calc(12) !default;
+//$font-size-sm: rem-calc(14) !default;
+//$font-size-default: rem-calc(16) !default;
+//$font-size-lg: rem-calc(18) !default;
+//$font-size-xl: rem-calc(20) !default;
+//$font-size-xxl: rem-calc(24) !default;
+
+
+// font
+// ----------------------------------------------
+
+$base-font-family: "Segoe UI", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+$font-family-monospace: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
+$font-family-kai: Georgia, "Times New Roman", Times, Kai, "Kaiti SC", KaiTi, BiauKai, "FontAwesome", serif;
+
+
+// TODO: 修改 媒体查询
+// Breakpoint
+// -----------------------------------------------------------------------------
+
+$breakpoint-small:            640px;  // 0 - 640px
+$breakpoint-medium:           1024px; // 641 - 1024px
+$breakpoint-large:            1280px; // 1025 - 1280px
+
+$breakpoint-small-max:        $breakpoint-small;
+$breakpoint-md:               $breakpoint-small-max; // legacy var, DO NOT USE IT
+
+$breakpoint-medium-min:       ($breakpoint-small + 1);
+$breakpoint-medium-max:       $breakpoint-medium;
+
+$breakpoint-large-min:        ($breakpoint-medium + 1);
+$breakpoint-large-max:        $breakpoint-large;
+
+$breakpoint-xl-min:           ($breakpoint-large + 1);
+
+// Media Queries
+// NOTE '~' in the beginning - media query must be escaped
+// -----------------------------------------------------------------------------
+
+$screen:        "only screen";
+
+$small-up:      "${screen}";
+$small-only:    "${screen} and (max-width: ${breakpoint-small-max})";
+
+$medium-up:     "${screen} and (min-width:${breakpoint-medium-min})";
+$medium-only:   "${screen} and (min-width:${breakpoint-medium-min}) and (max-width:${breakpoint-medium-max})";
+
+$large-up:      "${screen} and (min-width:${breakpoint-large-min})";
+$large-only:    "${screen} and (min-width:${breakpoint-large-min}) and (max-width:${breakpoint-large-max})";
+
+$xl-up:         "${screen} and (min-width:${breakpoint-xl-min})";
+
+
+// Maps
+// ---------------------------------------------
+
+$colors: (
+        primary: $global-primary,
+        secondary: $global-secondary,
+        success: $global-success,
+        warning: $global-warning,
+        alert: $global-alert
+);
+
+
+//$sizes: (
+//        xs: $font-size-xs,
+//        sm: $font-size-sm,
+//        lg: $font-size-lg,
+//        xl: $font-size-xl
+//);
+
+
+$states: (
+        active: #{$namespace}active,
+        disabled: #{$namespace}disabled
+);
+
+
+$global-radius: 4px !default;
+$global-rounded: 1000px !default;
+
+$radiuses: (
+        radius: $global-radius,
+        rounded: $global-rounded
+);
+
+
+
+// Components variables
+// =====================================
+$base-font-size: 100% !default;
+$body-background: #f9f9f9 !default;
+$body-font-color: $gray-darker !default;
+$body-font-family: $base-font-family !default;
+$body-font-weight: normal !default;
+$body-font-style: normal !default;
+
+
+// list
+$list: #{$namespace}list !default;
+$list-bg-active: #ececec;
+$list-color-title: #454545;
+$list-color-title-visited: #c3c3c3;
+$list-color-info: #a2a2a2;
+
+// night
+$night-bg: #1f1f1f;
+$night-loader-color: #862718;
+
+
+// list-night
+$night-list-bg-active: #1a1a1a;
+$night-list-color-title: #808080;
+$night-list-color-title-visited: #3c3c3c;
+$night-list-color-info: #5c5c5c;

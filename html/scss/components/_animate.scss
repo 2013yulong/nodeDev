@@ -1,0 +1,66 @@
+// animate.scss
+// ========================================
+
+$animate: #{$namespace}animate !default;
+
+.#{$animate} {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+
+  &.#{$animate}-infinite {
+    animation-iteration-count: infinite;
+  }
+
+  &.#{$animate}-hinge {
+    animation-duration: .3s;
+  }
+}
+
+// 动画关键帧
+// 右边移入
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// 右边移出
+@keyframes slideOutRight {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,7 @@
+{
+"applicationId":"videoplayer.sohu.com",
+"versionCode":1,
+"versionName":"1.0",
+"minJsKitVersion":1,
+"targetJsKitVersion":1
+}

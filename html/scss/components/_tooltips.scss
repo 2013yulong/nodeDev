@@ -1,0 +1,52 @@
+// tooltips
+// ============================
+
+$tooltips: #{$namespace}tooltips;
+
+// color
+$content-color: #929292;
+$close-color: #b1b1b1;
+
+.#{$tooltips} {
+  position: relative;
+  overflow: hidden;
+
+  &.#{$tooltips}-active {
+    //.#{$tooltips}-content {
+    //  z-index: 1000;
+    //}
+  }
+}
+
+.#{$tooltips}-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $white;
+  text-align: center;
+  color: $content-color;
+  z-index: 1000;
+  transform: translate(100%);
+  animation-duration: .15s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+
+  & > .#{$namespace}close {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: $close-color;
+  }
+}
+
+// 动画
+.#{$tooltips}-in {
+  animation-name: slideInRight;
+}
+
+.#{$tooltips}-out {
+  animation-name: slideOutRight;
+}
+

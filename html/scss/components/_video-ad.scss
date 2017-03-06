@@ -1,0 +1,281 @@
+// video-ad.scss
+// lite 版视频播放器，用于广告视频播放
+// ==========================================
+
+$videoPrefix: #{$namespace}video-ad;
+
+// var
+$bar-bg: #707070;
+$bar-buffer-bg: #999;
+$bar-progress-bg: #e24100;
+$fullscreen-control-bg: rgba(136, 136, 136, 0.4);
+$fullscreen-title-bg: rgba(136, 136, 136, 0.4);
+
+
+.#{$videoPrefix} {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 150px;
+  background: url("../images/nocontimg.png") no-repeat center;
+  background-size: 207px 34px;
+
+  //&:after {
+  //  content: '';
+  //  position: absolute;
+  //  top: 0;
+  //  right: 0;
+  //  bottom: 0;
+  //  left: 0;
+  //  background: rgba(0, 0, 0, .2);
+  //  z-index: 99;
+  //}
+
+  &.#{$namespace}active {
+    &:after {
+      display: none;
+    }
+
+    // 切换暂停按钮
+    .#{$videoPrefix}-control-play {
+      background-position: 0 0;
+    }
+
+    .#{$videoPrefix}-player {
+      display: none;
+    }
+  }
+
+  // 全屏
+  &.#{$videoPrefix}-fullscreen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $black;
+    z-index: 1001;
+
+    video {
+      height: 100%;
+    }
+
+    .#{$videoPrefix}-control,
+    .#{$videoPrefix}-title {
+      display: block;
+    }
+
+    .#{$videoPrefix}-sm {
+      display: none;
+    }
+
+  }
+
+  // 隐藏控制条
+  &.#{$videoPrefix}-hide-control {
+    .#{$videoPrefix}-control {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .#{$videoPrefix}-title {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+  }
+
+  // 资源等待
+  &.#{$videoPrefix}-waiting {
+    .#{$videoPrefix}-loader {
+      display: block!important;
+    }
+
+    &:after {
+      display: block;
+    }
+  }
+
+  // 准备
+  //&.#{$videoPrefix}-action {
+  //  .#{$videoPrefix}-loader {
+  //    display: none;
+  //  }
+  //}
+
+  // 视频加载错误
+  &.#{$videoPrefix}-error {
+    &:before {
+      content: '网络加载错误...';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 16px;
+      text-align: center;
+      color: $white;
+      background-color: rgba(136, 136, 136, 0.4);
+      border-radius: 2px;
+      margin: -25px 0 0 -60px;
+      z-index: 100;
+    }
+
+    &:after {
+      display: block;
+      background: $black;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  video {
+    display: block;
+    margin: 0;
+    width: 100%;
+    background: $black;
+  }
+}
+
+.#{$videoPrefix}-loader {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+}
+
+.#{$videoPrefix}-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: url('../images/video.png');
+  background-size: 118px 85px;
+  background-position: -45px -45px;
+  width: 36px;
+  height: 36px;
+  z-index: 100;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+// 进度条
+.#{$videoPrefix}-bar {
+  position: relative;
+  background: $bar-bg;
+  height: 2px;
+  top: -1px;
+}
+
+
+.#{$videoPrefix}-buffer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 99;
+  background: $bar-buffer-bg;
+}
+
+
+.#{$videoPrefix}-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 100;
+  background: $bar-progress-bg;
+}
+
+
+// 全屏 title
+.#{$videoPrefix}-title {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  color: $white;
+  background: $fullscreen-title-bg;
+  line-height: 40px;
+  text-indent: 15px;
+  text-align: left;
+  font-size: 16px;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 1s, transform 1s;
+}
+
+
+// 全屏工具条
+.#{$videoPrefix}-control {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  background: $fullscreen-control-bg;
+  z-index: 100;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 1s, transform 1s;
+}
+
+
+.#{$videoPrefix}-control-box {
+  position: relative;
+  color: $white;
+  padding: 0 90px;
+
+  .#{$videoPrefix}-control-duration,
+  .#{$videoPrefix}-control-time {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .#{$videoPrefix}-control-duration {
+    right: 40px;
+  }
+
+  .#{$videoPrefix}-control-time {
+    left: 40px;
+  }
+
+  .#{$videoPrefix}-bar {
+    top: 19px;
+  }
+}
+
+
+.#{$videoPrefix}-control-play {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url('../images/video.png');
+  background-size: 118px 85px;
+  background-position: -45px 0;
+  width: 40px;
+  height: 40px;
+}
+
+
+.#{$videoPrefix}-control-exit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url('../images/video.png');
+  background-size: 118px 85px;
+  background-position: 0 -45px;
+  width: 40px;
+  height: 40px;
+}
+
+// TODO: progress 和 buffer 考虑用伪元素

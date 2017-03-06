@@ -1,0 +1,8 @@
+{
+    "applicationId": "newssdk.sohu.com",
+    "versionCode": 12,
+    "versionName": "0.0.12",
+    "minJsKitVersion": 1,
+    "targetJsKitVersion": 1,
+    "buildTime": 1488292178825
+}

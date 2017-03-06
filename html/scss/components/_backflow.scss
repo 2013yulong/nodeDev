@@ -1,0 +1,89 @@
+// 有 open native card
+.ui-backflow-active {
+  .special-tools {
+    bottom: 88px;
+  }
+
+  .ui-backflow {
+    display: block;
+  }
+}
+
+.ui-backflow {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.83);
+  padding: 12px 0 12px 9px;
+  z-index: 1010;
+
+  @include clearfix;
+}
+
+.ui-backflow-icon {
+  float: left;
+  margin-right: 7px;
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.ui-backflow-text {
+  float: left;
+  .ui-backflow-title {
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 18px;
+    height: 18px;
+    vertical-align: text-top;
+    font-weight: bold;
+  }
+
+  .ui-backflow-desc {
+    color: #8a8a8a;
+    font-size: 10px;
+    height: 14px;
+    line-height: 16px;
+  }
+}
+
+.ui-backflow-btn {
+  float: right;
+  height: 28px;
+  background: #59d141;
+  color: #fff;
+  border-radius: 2px;
+  line-height: 28px;
+  font-size: 14px;
+  margin-right: 4px;
+  margin-top: 2px;
+  padding: 0 15px;
+}
+
+.ui-backflow-close {
+  float: right;
+  width: 32px;
+  height: 32px;
+  background-image: url("../images/close.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 11px 11px;
+}
+
+
+// iphone 5
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
+  .ui-backflow-btn {
+    padding: 0 10px;
+  }
+  .ui-backflow-title {
+    font-size: 1.2rem;
+  }
+}

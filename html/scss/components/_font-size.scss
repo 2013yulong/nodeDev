@@ -1,0 +1,62 @@
+// font-size.scss
+// ui-font-lg ui-font-md
+// 默认为 小号字体
+// ======================================
+
+// 大号字体
+.ui-font-lg {
+  .#{$list}-thumb,
+  .#{$list}-tv {
+    .#{$list}-title {
+      min-height: 42px;
+    }
+  }
+  .#{$list}-title {
+    font-size: 2rem;
+    line-height: 22px;
+    margin-bottom: 4px;
+  }
+}
+
+// 小号字体
+.ui-font-md {
+  .#{$list}-title {
+    font-size: 1.8rem;
+    line-height: 20px;
+  }
+}
+
+
+// iphone 6 +
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3) {
+  .ui-font-lg {
+    .#{$list}-thumb,
+    .#{$list}-tv {
+      .#{$list}-title {
+        min-height: 52px;
+      }
+    }
+    .#{$list}-title {
+      font-size: 2.2rem;
+      line-height: 24px;
+      margin-bottom: 6px;
+    }
+  }
+
+  .ui-font-md {
+    .#{$list}-thumb,
+    .#{$list}-tv {
+      .#{$list}-title {
+        min-height: 54px;
+      }
+    }
+    .#{$list}-title {
+      font-size: 2rem;
+      line-height: 24px;
+      margin-bottom: 6px;
+    }
+  }
+}

@@ -1,0 +1,217 @@
+/* list
+ .ui-list
+ theme:
+      .ui-list-thumb
+      .ui-list-tv
+      .ui-list-text
+      .ui-list-pics
+      .ui-list-link
+      .ui-list-live
+=================================================
+*/
+
+.#{$list} {
+  padding: 10.5px 14px;
+
+  @include clearfix;
+
+  //&:hover,
+  &:active {
+    background: $list-bg-active;
+  }
+
+  &.#{$namespace}visited {
+    a {
+      color: $list-color-title-visited;
+    }
+  }
+
+  a {
+    display: block;
+    color: $list-color-title;
+
+    &:visited {
+      color: $list-color-title-visited;
+    }
+  }
+
+  // 播放器按钮 图标
+  .#{$namespace}icon-play {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+  }
+
+  .#{$list}-body {
+    position: relative;
+  }
+
+  .#{$list}-left {
+    position: relative;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .#{$namespace}icon-talk,
+  .#{$namespace}icon-pic {
+    margin-right: 6px;
+  }
+
+}
+
+.#{$list}-title {
+  font-size: 16px;
+  margin-bottom: 6px;
+  @include line-clamp(2, 23px);
+}
+
+.#{$list}-info {
+  color: $list-color-info;
+  padding-top:5px;
+  @include clearfix;
+}
+
+.#{$list}-talk {
+  line-height: 12px;
+  margin-right: 14px;
+}
+
+// themes
+// 默认 图文新闻
+// 视频新闻
+.#{$list}-thumb,
+.#{$list}-tv {
+  .#{$list}-img {
+    width: 105px;
+    height: auto;
+    float: left;
+    margin-right: 14px;
+    position: relative;
+    background: #f2f2f2 no-repeat center;
+    background-size: contain;
+
+    img {
+      width: 105px;
+      height: 68px;
+    }
+  }
+
+  .#{$list}-title {
+    min-height: 40px;
+  }
+}
+
+// 视频新闻
+.#{$list}-tv {
+
+}
+
+// 文字
+.#{$list}-text {
+  padding: 10.5px 14px;
+}
+
+// 图文新闻
+.#{$list}-pics {
+  padding: 10.5px 14px;
+
+  .#{$list}-body {
+    margin: 0 -4px 5px;
+    @include clearfix;
+  }
+
+  .#{$list}-imgs {
+    float: left;
+    width: 33.3333%;
+    height: 70px;
+    overflow: hidden;
+    padding: 0px 2px 0px 3px;
+  }
+
+  img {
+    width: 100%;
+    background: #F1F1F1 no-repeat center;
+    background-size: contain;
+  }
+}
+
+// 外链 h5
+.#{$list}-link,
+.#{$list}-live {
+  .#{$list}-img {
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  img {
+    width: 100%;
+    background: #F1F1F1;
+  }
+}
+
+// 直播
+.#{$list}-live {
+
+}
+
+// iphone6 + 适配
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  .#{$list}-thumb,
+  .#{$list}-tv {
+    .#{$list}-img {
+      width: 112px;
+      height: 74px;
+
+      img {
+        width: 112px;
+        height: 74px;
+      }
+    }
+
+    .#{$list}-title {
+      min-height: 40px !important;
+      margin-bottom: 14px;
+    }
+  }
+
+  .#{$list}-title {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 12px;
+  }
+
+  .#{$list}-text {
+    .#{$list}-title {
+      margin-bottom: 5px;
+    }
+  }
+
+  .#{$list}-pics {
+    .#{$list}-imgs {
+      height: 80px;
+      padding: 0 4px;
+    }
+
+    .#{$list}-title {
+      margin-bottom: 6px;
+    }
+  }
+
+  .ui-list {
+    .ui-icon-play {
+      left: 7px;
+      bottom: 7px;
+    }
+  }
+}
+
+// 夜间模式
+.ui-night {
+  .#{$list} {
+    img {
+      background-color: #1D1B1D;
+    }
+  }
+}

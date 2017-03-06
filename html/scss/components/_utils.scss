@@ -1,0 +1,40 @@
+// utils.scss
+// ===============================
+
+// Float
+// ---------------------------------------------------------------
+.#{$namespace}cf {
+  @include clearfix;
+}
+
+@each $s, $float in (
+        l: left,
+        r: right,
+        n:none) {
+  .#{$namespace}f#{$s} {
+    float: #{$float};
+  }
+}
+
+// Text helper
+// ------------------------------------------------------------------
+
+%text-truncate {
+  @include text-overflow;
+}
+
+.#{$namespace}text-truncate {
+  @extend %text-truncate;
+}
+
+
+// Test helper
+// -----------------------------------------------------------------
+
+.#{$namespace}show {
+  display: block!important;
+}
+
+.#{$namespace}hide {
+  display: none!important;
+}

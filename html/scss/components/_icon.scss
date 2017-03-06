@@ -1,0 +1,75 @@
+// icon.scss
+// ==================================
+
+@import "./sprite/icon";
+
+$icon-sprite-background: url('../images/#{$icon-dot-night-image}') no-repeat;
+$icon-sprite-background-size: $icon-dot-night-size;
+$icon: #{$namespace}icon !default;
+
+
+.#{$icon} {
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.ui-icon-dot:before {
+  background: $icon-sprite-background;
+  background-size: $icon-sprite-background-size;
+  background-position: $icon-dot-position;
+  width: $icon-dot-width;
+  height: $icon-dot-height;
+}
+
+.ui-icon-map:before {
+  background: $icon-sprite-background;
+  background-size: $icon-sprite-background-size;
+  background-position: $icon-map-position;
+  width: $icon-map-width;
+  height: $icon-map-height;
+}
+
+.ui-icon-pic:before {
+  background: $icon-sprite-background;
+  background-size: $icon-sprite-background-size;
+  background-position: $icon-pic-position;
+  width: $icon-pic-width;
+  height: $icon-pic-height;
+}
+.ui-icon-play:before {
+  background: $icon-sprite-background;
+  background-size: $icon-sprite-background-size;
+  background-position: $icon-play-position;
+  width: $icon-play-width;
+  height: $icon-play-height;
+}
+
+.ui-icon-talk:before {
+  background: $icon-sprite-background;
+  background-size: $icon-sprite-background-size;
+  background-position: $icon-talk-position;
+  width: $icon-talk-width;
+  height: $icon-talk-height;
+}
+
+
+.ui-night {
+  .ui-icon-talk:before {
+    background-position: $icon-talk-night-position;
+  }
+
+  .ui-icon-pic:before {
+    background-position: $icon-pic-night-position;
+  }
+
+  .ui-icon-map:before {
+    background-position: $icon-map-night-position;
+  }
+
+  .ui-icon-dot:before {
+    background-position: $icon-dot-night-position;
+  }
+}

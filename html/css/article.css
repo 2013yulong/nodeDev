@@ -1,0 +1,301 @@
+/* 从channel移过来的样式 begin（正文页引用channel的首要原因：相关新闻复用了channel的样式。）*/
+a, a:hover, a:focus, a:active{
+  text-decoration: none;
+  outline: none;
+}
+a{
+    color: #000;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+}
+/*img[src=""]{
+  z-index: -1;
+}*/
+em {
+    font-style: inherit;
+}
+p + p, p + ul {
+  margin-top: 0;
+}
+
+img{
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+body, ul, li, h1, h2, p {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  list-style: none;
+}
+body, ul, li, h1, h2, h3, p, em, span, a, b, div{
+  font-family: "Helvetica Neue",Arial,serif;
+}
+
+
+/* 段子新闻 begin */
+.demoJoke .slice{
+  height: auto;
+  position: relative;
+  /*min-height: 60px;*/
+}
+.demoJoke .slice .content{
+  font-size: 14px;
+  line-height: 1.5;
+  color: #535353;
+  /*min-height: 30px;*/
+  font-size: 16px;
+}
+.demoJoke .slice.short .content{
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.demoJoke .slice.short .conten.demoJoke .slice .moret .words{
+  /*vertical-align: middle;*/
+}
+.demoJoke .slice .content .img-icon{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url(../images/icon-pic.png) no-repeat 0 2px;
+  background-size: contain;
+  margin-left: 5px;
+  display: none;
+}
+.Mode1 .demoJoke .slice .content .img-icon{background-image: url(../images/icon-pic-night.png);}
+.demoJoke .slice .content .btn{
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+  background: url(../images/arrow-gray.png) no-repeat 0 -11px;
+  background-size: cover;
+  margin-left: 5px;
+  display: none;
+}
+.Mode1 .demoJoke .slice .content .btn{opacity: 0.3;}
+.demoJoke .slice .content .btn.back{
+  background-position-y: 0;
+}
+.demoJoke .slice .cmt-joke{
+  font-size: 14px;
+  line-height: 1.3;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-height: 33px;
+  overflow: hidden;
+  background: #f1f1f1;
+  padding: 3px 5px;
+  margin: 5px 0;
+  color: #909090;
+  background: none;
+}
+.Mode1 .demoJoke .slice .cmt-joke{color: #535353;}
+.demoJoke .slice .cmt .name{
+  color: #465191;
+}
+
+.demoJoke .good_essay.good_active .evaluate_cont {
+  background-image: url('../images/night_praise2_v5.png');
+}
+.demoJoke .slice .cmt-link {
+  display: inline-block;
+  margin-left: 20px;
+}
+.demoJoke .slice .cmt-link i{
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  background: url(../images/discuss.png) no-repeat;
+  background-size: 70% auto;
+  background-position-y: 3px;
+  vertical-align: middle;
+}
+.Mode1 .demoJoke .slice .cmt-link i{background-image: url(../images/night_discuss.png);}
+.demoJoke .slice .switch{
+  width: 60px;
+  margin-top: 4px;
+}
+.Mode1 .demoJoke .slice .switch{opacity: 0.5;}
+.demoJoke .slice .switch .text{
+  color: #808080;
+  font-size: 12px;
+}
+.demoJoke .slice .switch .btn{
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+  background: url(../images/arrow-gray.png) no-repeat 0 -10px;
+  background-size: cover;
+  margin-left: 0px;
+}
+.demoJoke .slice .switch.back .btn{
+  background-position-y: 0;
+}
+.demoJoke .slice .bottom,
+.demoJoke .slice .bottom a {
+  color: #909090;
+  font-size: 12px;
+}
+.demoJoke .slice .bottom{
+  /*margin-top: 2px;*/
+}
+.Mode1 .demoJoke .slice .bottom a{color: #535353;}
+.bottom .good_essay .evaluate_cont{
+  background-size: 14px 12px;
+  padding-left: 20px;
+  background-image: url(../images/zan2.png);
+}
+.demoJoke .slice .right{
+  float: right;
+  margin-top: 1px;
+  height: 16px;
+  display: block;
+}
+.demoJoke .slice .joke{
+  margin-right: 10px;
+  display: none;;
+}
+.Mode1 .demoJoke .slice .joke{color: #535353;}
+.demoJoke .slice .more{
+  /*display: inline-block;
+  width: 14px;
+  height: 25px;
+  vertical-align: middle;
+  background: url(../images/icon-dot.png) no-repeat 0 12px;
+  background-size: contain;*/
+  /* 热区太小 */
+  display: inline-block;
+  width: 24px;
+  height: 40px;
+  vertical-align: middle;
+  background: url(../images/icon-dot.png) no-repeat 4px 30px;
+  background-size: 14px 4px;
+  position: relative;
+  top: -20px;
+  display: none;
+}
+.Mode1 .demoJoke .slice .more{background-image: url(../images/icon-dot-night.png);}
+.bottom span.good_1, span.boring_1 {
+  margin-top: -12px;
+}
+.demoJoke .slice .pic{
+  margin: 5px 0;
+}
+.demoJoke .slice .pic img{width: 100%;}
+.Mode1 .demoJoke .slice .pic img{opacity: 0.2;}
+.demoJoke .slice.short .cmt-joke{display: none;}
+.demoJoke .slice.short .pic{display: none;}
+.demoJoke .more-op{
+  position: absolute;
+  right: 14px;
+  bottom: 9px;
+  /*width: -webkit-calc(100% - 14px * 2);
+  width: calc(100% - 14px * 2);*/
+  width: 93%;
+  height: 50px;
+}
+.demoJoke .more-op .mask{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #f9f9f9;
+  opacity: 0.95;
+}
+.Mode1 .demoJoke .more-op .mask{background: #202020;}
+.demoJoke .more-op .panel{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+}
+.demoJoke .more-op .panel .btn{
+  flex: 1;
+  width: 30%;
+  text-align: center;
+  display: inline-block;
+}
+.demoJoke .more-op .panel .btn.btn3{
+  margin-right: 10px;
+}
+.demoJoke .more-op .panel .btn .pic{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url(../images/more_operation.png) no-repeat 0;
+  background-size: cover;
+  vertical-align: bottom;
+  margin-bottom: 7px;
+  margin-top: 10px;
+}
+.demoJoke .more-op .panel .btn .word {
+  display: block;
+  font-size: 12px;
+  color: #909090;
+  line-height: 1;
+  width: 50px;
+  margin: auto;
+}
+.Mode1 .demoJoke .more-op .panel .btn .word{color: #535353;}
+.demoJoke .more-op .panel .btn.btn1 .pic{background-position-y: 0px;}
+.demoJoke .more-op .panel .btn.btn1.dark .pic{background-position-y: -25px;  }
+.demoJoke .more-op .panel .btn.btn2 .pic{background-position-y: -105px;}
+.demoJoke .more-op .panel .btn.btn2.dark .pic{background-position-y: -165px;}
+.demoJoke .more-op .panel .btn.btn3 .pic{background-position-y: -163px;}
+.demoJoke .more-op .panel .btn.btn3.dark .pic{background-position-y: -237px;}
+.Mode1 .demoJoke .more-op .panel .btn.btn1 .pic{background-position-y: -229px;}
+.Mode1 .demoJoke .more-op .panel .btn.btn1.dark .pic{background-position-y: -257px;  }
+.Mode1 .demoJoke .more-op .panel .btn.btn2 .pic{background-position-y: -345px;}
+.Mode1 .demoJoke .more-op .panel .btn.btn2.dark .pic{background-position-y: -465px;}
+.Mode1 .demoJoke .more-op .panel .btn.btn3 .pic{background-position-y: -403px;}
+.Mode1 .demoJoke .more-op .panel .btn.btn3.dark .pic{background-position-y: -537px;}
+/*举报*/
+.demoJoke .more-op .panel .btn.btn4 .pic{
+  background: url(../images/icon_report_day.png) no-repeat 0 1px;
+}
+.demoJoke .more-op .panel .btn.btn4.dark .pic{
+  background: url(../images/icon_report_day_press.png) no-repeat 0 1px;
+}
+.Mode1 .demoJoke .more-op .panel .btn.btn4 .pic{
+  background: url(../images/icon_report_night.png) no-repeat 0 1px;
+}
+.Mode1 .demoJoke .more-op .panel .btn.btn4.dark .pic{
+  background: url(../images/icon_report_night_press.png) no-repeat 0 1px;
+}
+.demoJoke .more-op .panel .close{
+  position: absolute;
+  right: 2px;
+  bottom: 0px;
+  width: 14px;
+  height: 14px;
+  z-index: 2;
+  background: url(../images/ca.png) no-repeat;
+  background-size: cover;
+}
+.Mode1 .demoJoke .more-op .panel .close{opacity: 0.3;}
+.demoJoke .more-op {
+  transition: 100ms linear;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.demoJoke .more-op.show {
+  transform: scaleX(1);
+}
+.demoJoke .slice:active{background: none;}
+.demoJoke .slice a:active,
+.demoJoke .slice a:hover,
+.demoJoke .slice a:visited{
+  background: none;
+}
+.demoJoke .good_1{margin-left: 6%;}
+/* 段子新闻 end */
+

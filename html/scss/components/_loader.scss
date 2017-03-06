@@ -1,0 +1,132 @@
+// loader.scss
+// ============================================
+
+.#{$namespace}loader {
+  font-size: 10px;
+  position: relative;
+  margin: 0 auto;
+  text-indent: -9999em;
+  border-radius: 100%;
+  width: 0.8em;
+  height: 0.8em;
+  animation-delay: -0.16s;
+  animation-fill-mode: both;
+  animation: loader 1.3s infinite ease-in-out;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    border-radius: 100%;
+    width: 0.8em;
+    height: 0.8em;
+    animation-fill-mode: both;
+    animation: loader 1.3s infinite ease-in-out;
+  }
+
+  &:before {
+    left: -1.5em;
+    animation-delay: -0.2s;
+  }
+
+  &:after {
+    left: 1.5em;
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes loader {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0.8em 0 -0.8em #fff;
+  }
+  40% {
+    box-shadow: 0 0.8em 0 0 #fff;
+  }
+}
+
+@keyframes loader-red {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0.8em 0 -0.8em red;
+  }
+  40% {
+    box-shadow: 0 0.8em 0 0 red;
+  }
+}
+
+@keyframes loader-night-red {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0.8em 0 -0.8em $night-loader-color;
+  }
+  40% {
+    box-shadow: 0 0.8em 0 0 $night-loader-color;
+  }
+}
+
+// 页面下拉加载更多 loader
+.#{$namespace}loader-two {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 18px;
+  animation: spinnermove 1.5s infinite ease-in-out;
+  // 开启硬件加速
+  transform: translateZ(0);
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    background-color: #ed3010;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    animation: cubemove 1.5s infinite ease-in-out;
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  &:after {
+    bottom: 0;
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes cubemove {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spinnermove {
+  0% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
+  }
+}
+
+//TODO: 重写 loader 方便公用

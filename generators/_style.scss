@@ -1,0 +1,9 @@
+// <%= name %>.scss
+// <%= email %> (<%= createDate %>)
+// =====================================
+
+$<%= name%>: #{$namespace}<%= name%> !default;
+
+.#{$<%= name%>} {
+
+}
